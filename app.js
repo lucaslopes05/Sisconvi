@@ -3,7 +3,8 @@ const app = express()
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const usuarios = require('./routes/usuario')
+const usuariosRouter = require('./routes/usuario')
+const adminRouter = require('./routes/admin')
 const path = require('path')
 const session = require('express-session')
 const flash = require('connect-flash')
@@ -36,7 +37,7 @@ const flash = require('connect-flash')
 
     //Conecao com db Mongoose
         mongoose.Promise = global.Promise;
-        mongoose.connect('mongodb://localhost/blogapp',{useNewUrlParser: true}).then(()=>{
+        mongoose.connect('mongodb://localhost/sisconvi',{useNewUrlParser: true}).then(()=>{
             console.log('Conectado ao Mongo Db')
         }).catch((err)=>{
             console.log('Erro no mongoose: '+err);
@@ -46,7 +47,9 @@ const flash = require('connect-flash')
     
 
 //Rotas
-        app.use('/usuarios',usuarios)
+        app.use('/usuarios',usuariosRouter)
+        app.use('/admin',adminRouter)
+        
 
 
 //Outros 
