@@ -79,6 +79,10 @@ router.post('/registro', (req,res)=>{
     }
 })
 
+router.get('/login',(req,res)=>{
+    res.render('usuarios/login')
+})
+
 // router.get('/teste',(req,res)=>{
 //     res.render('admin/')
 // })

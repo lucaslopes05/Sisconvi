@@ -1,0 +1,22 @@
+   {{!-- CSS expecifico da pagina de login --}}
+   <link rel="stylesheet" href="/css/login.css">
+   
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="fadeIn first">
+                <img class="mb-4" src="/img/cds_logo_80x126.png" alt="" width="80" height="100">
+            </div>
+            <!-- <form action="/realizarLogin" method="POST"> -->
+            <form method="POST">
+                <input type="email" id="usuario" class="fadeIn second" name="usuario" placeholder="Email" required>
+                <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="password" required>
+                <input type="submit" class="fadeIn fourth" value="Entrar" id="entrarBtn">
+            </form>
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Esqueceu a senha?</a>
+            </div>
+        </div>
+    </div>
+
+{{!-- js da pagina de login --}}
+    <script src="/js/login.js"></script>
