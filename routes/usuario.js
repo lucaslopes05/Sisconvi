@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 require('../models/Usuario')
 const Usuario = mongoose.model('Usuario');
 const bcrypt = require('bcryptjs')
+const passport = require('passport')
 
 
 router.get('/registro',(req,res)=>{
@@ -56,17 +57,17 @@ router.post('/registro', (req,res)=>{
                     bcrypt.hash(novoUsuario.senha, salt, (erro,hash)=>{
                         if(erro){
                             req.flash('error_msg','Houve um erro durante o salvamento do usuario')
-                            res.redirect('/admin')
+                            res.redirect('/admin/registro')
                         }
 
                         novoUsuario.senha = hash
                     
                         novoUsuario.save().then(()=>{
                             req.flash('success_msg', 'Usuario criado com sucesso') 
-                            res.redirect('/admin')  
+                            res.redirect('/usuarios/login')  
                         }).catch((err)=>{
                             req.flash('error_msg','Houve um erro ao criar o usuario, tente novamente!')
-                            res.redirect('/admin')
+                            res.redirect('/admin/registro')
                         })
                     })
                 })
@@ -81,6 +82,14 @@ router.post('/registro', (req,res)=>{
 
 router.get('/login',(req,res)=>{
     res.render('usuarios/login')
+})
+
+router.post('/login', (req,res,next)=>{
+    passport.authenticate('local',{
+        successRedirect: '/admin',
+        failureRedirect: '/usuarios/login',
+        failureFlash: true
+    })(req,res,next)
 })
 
 // router.get('/teste',(req,res)=>{
