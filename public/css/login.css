@@ -1,14 +1,14 @@
 /* BASIC */
 
-html {
+/* html {
     background-color: #56baed;
-  }
+  } */
   
   body {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
-    background-color: dodgerblue;
-    background-color: rgb(32, 113, 167);
+    height: 97vh;
+    /* background-color: dodgerblue;
+    background-color: rgb(32, 113, 167); */
     background-image: linear-gradient(cornflowerblue, rgb(32, 113, 167));
   }
   

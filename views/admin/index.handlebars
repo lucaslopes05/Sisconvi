@@ -5,3 +5,20 @@
 {{/each}}
 
 <H1>SISCONVI</H1>
+
+
+
+{{#if user}}
+
+    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Logout</a>
+    <a href="/admin/admin" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Admin</a>
+
+    <br>
+    <p>Usuario logado:  {{user.nome}}</p>
+{{else}}
+<br>
+    
+    <a href="/usuarios/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a>
+    <a href="/usuarios/registro" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cadastro</a>
+
+{{/if}}
