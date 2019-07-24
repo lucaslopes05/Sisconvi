@@ -12,5 +12,9 @@ router.get('/admin',eAdmin, (req,res)=>{
     res.send('Somente para ADMIN')
 })
 
+router.get('/teste',(req,res)=>{
+    res.render('layouts/principal')
+})
+
 
 module.exports = router;

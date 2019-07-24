@@ -1,0 +1,118 @@
+/*Google Fonts*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i");
+/*Modify Chart Colors Hack*/
+.chart, .easypiechart {
+  filter: hue-rotate(0deg) saturate(100%); }
+
+
+
+@media (max-width: 768px) {
+  .theme-switcher {
+    display: none; } }
+body {
+  background-color: #ffffff;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  color: #444444; }
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+  background: #439e40; }
+  .sidebar a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: .2rem;
+    padding: .75rem 1rem; }
+  .sidebar em {
+    font-size: 1rem; }
+  .sidebar h1 {
+    color: #ffffff;
+    border: none;
+    font-size: 0.9rem;
+    padding: 0rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem; }
+  .sidebar .site-title {
+    margin-top: .5rem;
+    margin-bottom: 1.75rem; }
+    .sidebar .site-title a {
+      font-size: .9rem;
+      padding-left: 0;
+      padding-right: 0;
+      cursor: pointer; }
+    .sidebar .site-title a:hover {
+      background: none !important; }
+  .sidebar .nav {
+    margin-bottom: 20px; }
+  .sidebar .nav-item {
+    width: 100%; }
+  .sidebar .nav-item + .nav-item {
+    margin-left: 0; }
+  .sidebar .nav-link {
+    border-radius: 0; }
+  .sidebar .logout-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 85%;
+    text-align: center;
+    border-radius: .3rem; }
+
+.sidebar .nav ul.children {
+  width: auto;
+  padding: 0;
+  margin: 0; }
+  .sidebar .nav ul.children li a {
+    padding: .5rem 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff; }
+  .sidebar .nav ul.children li a:visited {
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: #ffffff !important; }
+  .sidebar .nav ul.children li a:hover {
+    background: #6365d2 !important;
+    color: #ffffff !important; }
+
+#wrapper.toggled .sidebar-nav {
+  display: none; }
+
+#menu-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem; }
+
+.sidebar a:focus, .sidebar a:hover, .sidebar a:active {
+  background-color: #105710 !important; }
+
+@media screen and (max-width: 576px) {
+  #wrapper .sidebar-nav {
+    display: none; }
+
+  #wrapper.toggled .sidebar-nav {
+    display: block !important; }
+
+  .sidebar {
+    position: inherit;
+    padding-bottom: 0px;
+    margin-bottom: 1rem; }
+
+  #menu-toggle {
+    background-color: #6365d2; } }
+@media screen and (min-width: 576px) {
+  #wrapper.toggled .sidebar-nav {
+    display: block; }
+
+  #menu-toggle {
+    display: none; } }

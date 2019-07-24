@@ -5,18 +5,25 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sisconvi</title>
+    <title>SISCONVI</title>
 </head>
 <body>
 
-        <div class="container mt-4">
-            {{#if error}}
-                <div class="alert alert-danger">{{error}}</div>
-            {{else}}
+        
+        {{!-- {{>_nav}} --}}
+        
+        <div class="container-fluid">
 
-            {{/if}}
+            <div class="container">
+                {{#if error}}
+                    <div class="alert alert-danger">{{error}}</div>
+                {{else}}
 
-            {{>_msg}}
+                {{/if}}
+
+                {{>_msg}}
+            </div>
+            
             {{{body}}}
     </div>
     
