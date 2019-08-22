@@ -82,7 +82,7 @@ router.post('/registro', (req,res)=>{
 })
 
 router.get('/login',(req,res)=>{
-    res.render('usuarios/login')
+    res.render('usuarios/login', {layout: false})
 })
 
 router.post('/login', (req,res,next)=>{
@@ -93,9 +93,9 @@ router.post('/login', (req,res,next)=>{
     })(req,res,next)
 })
 
-// router.get('/teste',(req,res)=>{
-//     res.render('admin/')
-// })
+router.get('/teste',(req,res)=>{
+    res.render('admin/')
+})
 
 
 module.exports = router

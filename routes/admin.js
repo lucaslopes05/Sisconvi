@@ -4,7 +4,7 @@ const {eAdmin} = require('../helpers/eAdmin')
 
 
 router.get('/',(req,res)=>{
-    res.render('admin/index')
+    res.render('layouts/main')
     // res.send("Rota padrao admin")
 })
 
@@ -13,7 +13,8 @@ router.get('/admin',eAdmin, (req,res)=>{
 })
 
 router.get('/teste',(req,res)=>{
-    res.render('layouts/principal')
+    res.render('usuarios/teste')
+    // res.send('Somente para ADMIN')
 })
 
 

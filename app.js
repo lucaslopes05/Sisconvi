@@ -13,56 +13,55 @@ require('./config/auth')(passport)
 
 
 
-
-
 //Configuracoes
-    //Tamplete Engine 
-        app.engine('handlebars',handlebars({defaultLayout: 'main'}))
-        app.set('view engine','handlebars')
-    // Sessao
-        app.use(session({
-            secret: "seguracaSenha",
-            resave: true,
-            saveUninitialized: true
-        }))
-            //config da passport para salvar dados do usuario em uma sessoes
-            app.use(passport.initialize())
-            app.use(passport.session())
+//Tamplete Engine 
+app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
 
-        app.use(flash())
+// Sessao
+app.use(session({
+    secret: "seguracaSenha",
+    resave: true,
+    saveUninitialized: true
+}))
+//config da passport para salvar dados do usuario em uma sessoes
+app.use(passport.initialize())
+app.use(passport.session())
 
-    // Middleware
-        app.use((req,res,next)=>{
-            res.locals.success_msg = req.flash('success_msg')
-            res.locals.error_msg = req.flash('error_msg')
-            res.locals.error = req.flash('error')
-            res.locals.user = req.user || null
-            next()
-        })
-    //body-parser
-        app.use(bodyParser.urlencoded({extended: true}))
-        app.use(bodyParser.json())   
+app.use(flash())
 
-    //Conecao com db Mongoose
-        mongoose.Promise = global.Promise;
-        mongoose.connect('mongodb://localhost/sisconvi',{useNewUrlParser: true}).then(()=>{
-            console.log('Conectado ao Mongo Db')
-        }).catch((err)=>{
-            console.log('Erro no mongoose: '+err);
-        })
-    //Public
-        app.use(express.static(path.join(__dirname,'public')))
-    
+// Middleware
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.error_msg = req.flash('error_msg')
+    res.locals.error = req.flash('error')
+    res.locals.user = req.user || null
+    next()
+})
+//body-parser
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
+//Conecao com db Mongoose
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/sisconvi', { useNewUrlParser: true }).then(() => {
+    console.log('Conectado ao Mongo Db')
+}).catch((err) => {
+    console.log('Erro no mongoose: ' + err);
+})
+//Public
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 //Rotas
-        app.use('/usuarios',usuariosRouter)
-        app.use('/admin',adminRouter)
-        
+app.use('/usuarios', usuariosRouter)
+app.use('/admin', adminRouter)
+
 
 
 //Outros 
-    //numero da posta da aplicacao 
-    const PORT = 3030
-    app.listen(PORT, ()=>{
-        console.log("Servidor rodano... ")
-    })
+//numero da posta da aplicacao 
+const PORT = 3030
+app.listen(PORT, () => {
+    console.log("Servidor rodano... ")
+})

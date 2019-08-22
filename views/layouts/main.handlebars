@@ -8,10 +8,6 @@
     <title>SISCONVI</title>
 </head>
 <body>
-
-        
-        {{!-- {{>_nav}} --}}
-        
         <div class="container-fluid">
 
             <div class="container">
@@ -20,11 +16,23 @@
                 {{else}}
 
                 {{/if}}
-
-                {{>_msg}}
             </div>
             
-            {{{body}}}
+            <div class="row">
+                <div id="header" class="col-12">
+                    {{>_header}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="sidebar" class="col-sm-2">
+                    {{>_nav}}
+            </div>
+
+            <div id="body" class="col-sm-10">
+                    {{{body}}}
+            </div>
+        </div>
     </div>
     
 </body>

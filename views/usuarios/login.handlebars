@@ -1,33 +1,40 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     {{!-- CSS expecifico da pagina de login --}}
     <link rel="stylesheet" href="/css/login.css">
-    
-     <div class="wrapper fadeInDown">
-         <div id="formContent">
-             <div class="fadeIn first">
-                 <img class="mb-4" src="/img/cds_logo_80x126.png" alt="" width="80" height="100">
-             </div>
-             <!-- <form action="/realizarLogin" method="POST"> -->
-             <form method="POST" action="/usuarios/login">
-                 <input type="email" id="usuario" class="fadeIn second" name="email" placeholder="Email" required>
-                 <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="password" required>
-                 <input type="submit" class="fadeIn fourth" value="Entrar" id="entrarBtn">
-             </form>
-             <div id="formFooter">
-                 <a class="underlineHover" href="#">Esqueceu a senha?
-                 </a>
-             </div>
-         </div>
-     </div>
- 
-  </body>
-  </html>
-   
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body>
+    <div class="container">
+        {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>
+        {{else}}
+
+        {{/if}}
+    </div>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="fadeIn first">
+                <img class="mb-4" src="/img/cds_logo_80x126.png" alt="" width="80" height="100">
+            </div>
+            <!-- <form action="/realizarLogin" method="POST"> -->
+            <form method="POST" action="/usuarios/login">
+                <input type="email" id="usuario" class="fadeIn second" name="email" placeholder="Email" required>
+                <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="password" required>
+                <input type="submit" class="fadeIn fourth" value="Entrar" id="entrarBtn">
+            </form>
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Esqueceu a senha?
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
